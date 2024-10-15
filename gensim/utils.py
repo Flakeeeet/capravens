@@ -527,7 +527,7 @@ def generate_feedback_completion_llm(prompt, max_tokens, temperature, interactio
 
 def generate_feedback_api_llm(prompt, max_tokens, temperature):
     '''use mistal or other hf models with hf API'''
-    API_TOKEN = "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"
+    API_TOKEN = ""
     endpoint = f"https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.2"
     headers = {
         "Authorization": "Bearer {API_TOKEN}"}  # Replace YOUR_API_KEY with your actual Hugging Face API key

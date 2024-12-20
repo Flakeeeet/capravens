@@ -75,24 +75,24 @@ to specify the desired task.
 python gensim/run_simulation.py \ 
     prompt_folder=bottomup_task_generation_prompt \ 
     save_memory=True load_memory=True \ 
-    task_description_candidate_num=[reference number] \ 
+    task_description_candidate_num=<REFERENCE_NUMBER> \ 
     use_template=True
 
 # top-down task generation
 python gensim/run_simulation.py \
     prompt_folder=topdown_task_generation_prompt \ 
     save_memory=True load_memory=True \
-    task_description_candidate_num=[reference number] \ 
-    use_template=True target_task_name=[task name] \
-    target_task_description=[task instruction]
+    task_description_candidate_num=<REFERENCE_NUMBER> \ 
+    use_template=True target_task_name=<TASK_NAME> \
+    target_task_description=<TASK_INSTRUCTION>
 
 # task-conditioned chain-of-thought generation
 python gensim/run_simulation.py \
     prompt_folder=topdown_chain_of_thought_prompt \ 
     save_memory=True load_memory=True \ 
-    task_description_candidate_num=[reference number] \ 
-    use_template=True target_task_name=[task name] \ 
-    target_task_description=[task instruction] 
+    task_description_candidate_num=<REFERENCE_NUMBER> \ 
+    use_template=True target_task_name=<TASK_NAME> \ 
+    target_task_description=<TASK_INSTRUCTION> 
 ```
 ### Execute a Task
 To directly try to complete a task (based on existing task file).
@@ -100,7 +100,7 @@ To directly try to complete a task (based on existing task file).
 Fill in **task name** to locate the task file.
 
 ```bash
-python cliport/cap.py task=[task name] mode=cap check=False
+python cliport/cap.py task=<TASK_NAME> mode=cap check=False
 ```
 
 ### Generate Test Task Dataset
@@ -110,7 +110,7 @@ Fill in **number of samples** to set number of episodes one task dataset should 
 
 ```bash
 python cliport/demo.py n=[number of samples] \
-    task=[task name] mode=test all_result=False\
+    task=<TASK_NAME> mode=test all_result=False\
 ```
 This will save the test dataset in the folder data.
 
@@ -119,7 +119,7 @@ Randomly pick *n* episodes form test dataset and execute and evaluate,
 finally show success rate.
 
 ```bash
-python cliport/cap.py task=[task name] mode=test check=False n=1
+python cliport/cap.py task=<TASK_NAME> mode=test check=False n=1
 ```
 
 ----------------------------------------------------------------------------
